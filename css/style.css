@@ -1,0 +1,173 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+body {
+    height: 100vh;
+    background-color: #ea231f;
+    display: grid;
+    place-items: center;
+    font-family: sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+button {
+    padding: 10px 20px;
+}
+
+button:hover {
+    opacity: .9;
+    cursor: pointer;
+}
+
+/* MOdal */
+.modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: grid;
+    place-items: center;
+    background: rgb(0, 0, 0, .3);
+    display: none;
+    animation: openModal 1s linear forwards;
+}
+
+.modal .card {
+    background-color: white;
+    position: relative;
+    width: 900px;
+    display: flex;
+    flex: 1;
+    padding: 20px 10px;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (max-width: 767px) {
+    .modal .card {
+        flex-direction: column;
+        text-align: center;
+        width: 500px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    .modal .card {
+        flex-direction: column;
+        text-align: center;
+        width: 700px;
+    }
+}
+
+
+.modal .card i {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.modal .card .brand {
+    width: 500px;
+}
+
+@media (max-width:991px) {
+    .modal .card .brand {
+        width: 680px;
+    }
+}
+
+@media (max-width:767px) {
+    .modal .card .brand {
+        width: 680px;
+    }
+}
+
+.modal .card .brand img {
+    /* display: block; */
+    width: 100%;
+}
+
+@media (max-width:767px) {
+    .modal .card .brand img {
+        width: 50%;
+        border-radius: 50%;
+    }
+}
+
+.modal .card .info h2 {
+    margin-bottom: 30px;
+}
+
+.modal .card .info p {
+    font-size: 18px;
+    color: #777;
+}
+
+.modal .card .info form {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal .card .info form input[type="email"] {
+    width: 100%;
+    background-color: #eee;
+    padding: 10px 20px;
+    outline: none;
+}
+
+.modal .card .info form input[type="submit"] {
+    background-color: #ea231f;
+    color: white;
+    padding: 10px 20px;
+}
+
+@media (max-width:767px) {
+    .modal .card .info form {
+        display: block;
+    }
+
+    .modal .card .info form input[type="submit"] {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+
+/* Key Frames */
+
+@keyframes openModal {
+    form{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+    
+}
+@keyframes closeModal {
+    form{
+        opacity: 1;
+    }
+
+    to{
+        opacity: 0;
+    }
+    
+}
+
+.close-Modal-animation{
+    animation: closeModal 1s linear forwards;
+}
